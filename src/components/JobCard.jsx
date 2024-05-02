@@ -1,7 +1,13 @@
 import { Avatar, Box, Button, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
+import ShowMoreDialog from './ShowMoreDialog';
 
 const JobCard = ({ jobsDetails }) => {
+    //creating states for checking if the model is open or not
+    const [isOpen, setOpenModal] = useState(false);
+    const openInfoModal = () => setOpenModal(true);
+    const closeInfoModal = () => setOpenModal(false);
+
     console.log('Hiii', jobsDetails);
     if (jobsDetails == undefined) return <></>;
     return (
@@ -64,6 +70,7 @@ const JobCard = ({ jobsDetails }) => {
                     <Typography
                         fontSize='1.4rem'
                         lineHeight='1.5'
+                        fontWeight='300'
                     >
                         Lead Software Engineer
                     </Typography>
@@ -86,7 +93,7 @@ const JobCard = ({ jobsDetails }) => {
             >
                 <Typography
                     fontSize='1.4rem'
-                    fontWeight='400'
+                    fontWeight='300'
                     color='rgb(77, 89, 106)'
                 >
                     {`Estimated Salary: ${jobsDetails?.salaryCurrencyCode} ${jobsDetails.minJdSalary != null ? jobsDetails?.minJdSalary : jobsDetails?.maxJdSalary - 10} - ${jobsDetails?.maxJdSalary} ⚠️`}
@@ -105,22 +112,23 @@ const JobCard = ({ jobsDetails }) => {
                 }}
             >
                 <Typography
-                    fontWeight='500'
+                    fontWeight='400'
                     lineHeight='1.5'
-                    fontSize='1.5rem'
+                    fontSize='1.6rem'
                 >
                     About Company:
                 </Typography>
                 <Typography
                     fontSize='1.4rem'
                     color='rgb(77, 89, 106)'
+                    fontWeight='300'
                 >
                     Futuristic Labs is an Innovation Studio that is focused on enriching the quality of life by harnessing the power of technology to create products that transform mundane activities into delightful experiences.
                 </Typography>
                 <Typography
-                    fontWeight='500'
+                    fontWeight='400'
                     lineHeight='1.5'
-                    fontSize='1.5rem'
+                    fontSize='1.6rem'
                     mt='1rem'
                 >
                     About Role:
@@ -128,6 +136,7 @@ const JobCard = ({ jobsDetails }) => {
                 <Typography
                     fontSize='1.4rem'
                     color='rgb(77, 89, 106)'
+                    fontWeight='300'
                     style={{
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
@@ -145,6 +154,10 @@ const JobCard = ({ jobsDetails }) => {
                 <Typography
                     fontSize='1.4rem'
                     color='#4943da'
+                    onClick={openInfoModal}
+                    sx={{
+                        cursor: 'pointer'
+                    }}
                 >
                     Show more
                 </Typography>
@@ -159,7 +172,7 @@ const JobCard = ({ jobsDetails }) => {
             >
                 <Typography
                     fontSize='1.3rem'
-                    fontWeight='600'
+                    fontWeight='500'
                     color='#8b8b8b'
                     mb='0.3rem'
                     letterSpacing='0.1rem'
@@ -191,7 +204,7 @@ const JobCard = ({ jobsDetails }) => {
             >
                 <Typography
                     fontSize='1.3rem'
-                    fontWeight='600'
+                    fontWeight='500'
                     color='#8b8b8b'
                     mb='0.3rem'
                     letterSpacing='0.1rem'
@@ -276,7 +289,7 @@ const JobCard = ({ jobsDetails }) => {
                     </Typography>
                 </Button>
             </Box>
-
+            {isOpen && <ShowMoreDialog isOpen={openInfoModal} onClose={closeInfoModal} jobDetails={jobsDetails} />}
         </Box >
     )
 }
