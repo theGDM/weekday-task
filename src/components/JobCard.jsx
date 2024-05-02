@@ -107,7 +107,7 @@ const JobCard = ({ jobsDetails }) => {
                 height='25rem'
                 maxWidth='100%'
                 sx={{
-                    backgroundImage: 'linear-gradient(to bottom, rgb(77, 89, 106) 0%, rgb(77, 89, 106) 60%,  transparent 100%);',
+                    backgroundImage: 'linear-gradient(to bottom, rgb(77, 89, 106) 0%, rgb(77, 89, 106) 65%,  transparent 100%);',
                     backgroundClip: 'text'
                 }}
             >
