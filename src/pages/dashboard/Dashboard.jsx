@@ -5,7 +5,7 @@ import { GetJObsDetails } from '../../services/api';
 
 const Dashboard = () => {
     useEffect(() => {
-        GetJObsDetails();
+        // GetJObsDetails();
     }, []);
     return (
         <Box display='flex' flexDirection='column' p='2rem'>
