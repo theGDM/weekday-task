@@ -1,7 +1,9 @@
 import { Avatar, Box, Button, Typography } from '@mui/material'
 import React from 'react'
 
-const JobCard = () => {
+const JobCard = ({ jobsDetails }) => {
+    console.log('Hiii', jobsDetails);
+    if (jobsDetails == undefined) return <></>;
     return (
         <Box
             display='flex'
@@ -11,6 +13,7 @@ const JobCard = () => {
             maxWidth='36rem'
             alignItems='start'
             p='0.8rem'
+            m='0.5rem 1.2rem 1.2rem 1.2rem'
             boxShadow='rgba(0, 0, 0, 0.25) 0px 1px 4px 0px !important'
             borderRadius='2rem'
         >
@@ -68,8 +71,9 @@ const JobCard = () => {
                         fontSize='1.1rem'
                         fontWeight='500'
                         mt='0.5rem'
+                        textTransform='capitalize'
                     >
-                        Hyderabad
+                        {jobsDetails?.location}
                     </Typography>
 
                 </Box>
@@ -85,7 +89,7 @@ const JobCard = () => {
                     fontWeight='400'
                     color='rgb(77, 89, 106)'
                 >
-                    Estimated Salary: &#8377;20 - 30 LPA ⚠️
+                    {`Estimated Salary: ${jobsDetails?.salaryCurrencyCode} ${jobsDetails.minJdSalary != null ? jobsDetails?.minJdSalary : jobsDetails?.maxJdSalary - 10} - ${jobsDetails?.maxJdSalary} ⚠️`}
                 </Typography>
             </Box>
             <Box
@@ -129,11 +133,7 @@ const JobCard = () => {
                         textOverflow: 'ellipsis',
                     }}
                 >
-                    Location: Hyderabad, India (Work From Office)Company Overview:Are you ready to be a part of a company that doesn't just dream about the future but actively builds it? Welcome to Futuristic Labs, an Innovation Studio located in Hyderabad, India, where ambitious ideas become tangible solutions that transform lives and make a positive impact on the world.
-                    At Futuristic Labs, we are on a mission to free up human potential by automating everyday tasks, liberating individuals from daily obligations, and driving a positive impact on society. We believe that the best way to predict the future is to build it, and we're doing just that. Our passionate team is revolutionizing cooking with Riku and Semi to empowering food influencers with Klynk Recipes, we're building a future where technology serves humanity.
-                    Join us as we dream, build, and repeat, pushing the boundaries of what's possible and shaping a better future for all. If you are a passionate, innovative, and forward-thinking individual who wants to make a significant impact on the world, we invite you to #BuildWithUs. Together, we'll turn visions of a better world into tangible solutions that make a real difference.
-                    Websites:https://www.futuristiclabs.iohttp://getriku.comhttp://cookwithsemi.comhttps://www.klynk.apphttps://klynk.recipes
-                    Job Description:Position Overview:We're seeking a visionary Software Team Lead. This role isn't just about managing a team; it's about laying the foundation, setting the standards, and driving the technological direction of the company in alignment with our mission to "Connect the dots in the entire cooking journey."
+                    {jobsDetails?.jobDetailsFromCompany}
                 </Typography>
             </Box>
             <Box
@@ -175,30 +175,9 @@ const JobCard = () => {
                         borderRadius='5rem'
                         bgcolor='#d9fed3'
                         mr='0.4rem'
+                        textTransform='capitalize'
                     >
-                        NodeJS
-                    </Box>
-                    <Box
-                        fontSize='0.9rem'
-                        fontWeight='500'
-                        color='#4943da'
-                        padding='0.2rem 0.7rem'
-                        borderRadius='5rem'
-                        bgcolor='#d9fed3'
-                        mr='0.4rem'
-                    >
-                        NodeJS
-                    </Box>
-                    <Box
-                        fontSize='0.9rem'
-                        fontWeight='500'
-                        color='#4943da'
-                        padding='0.2rem 0.7rem'
-                        borderRadius='5rem'
-                        bgcolor='#d9fed3'
-                        mr='0.4rem'
-                    >
-                        NodeJS
+                        {jobsDetails?.jobRole}
                     </Box>
                 </Box>
             </Box>
@@ -224,7 +203,7 @@ const JobCard = () => {
                     fontWeight='500'
                     letterSpacing='0.1rem'
                 >
-                    1 years
+                    {(jobsDetails.minExp == null) ? 'Fresher' : `${jobsDetails.minExp} years`}
                 </Typography>
             </Box>
             <Box
@@ -243,8 +222,13 @@ const JobCard = () => {
                         borderRadius: '0.8rem',
                         fontWeight: '500',
                         fontSize: '1.5rem',
-                        textTransform: 'none'
+                        textTransform: 'none',
+                        "&.MuiButtonBase-root:hover": {
+                            bgcolor: "rgb(85, 239, 196)"
+                        }
                     }}
+                    target="_blank"
+                    href={jobsDetails?.jdLink}
                 >
                     ⚡ Easy Apply
                 </Button>
@@ -264,14 +248,12 @@ const JobCard = () => {
                         p: '0.8rem 1.8rem',
                         borderRadius: '0.8rem',
                         fontWeight: '500',
-                        fontSize: '1.5rem'
+                        fontSize: '1.5rem',
+                        "&.MuiButtonBase-root:hover": {
+                            bgcolor: "rgb(73, 67, 218)"
+                        }
                     }}
-                    style={{
-                        '&:hover': {
-                            backgroundColor: 'rgb(73, 67, 218)',
-                            boxShadow: 'none',
-                        },
-                    }}
+
                 >
                     <Box
                         display='flex'

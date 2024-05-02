@@ -2,12 +2,12 @@ import axios from 'axios';
 
 const fetchURL = 'https://api.weekday.technology/adhoc/getSampleJdJSON';
 
-export const GetJObsDetails = async () => {
+export const GetJObsDetails = async (limit, offset) => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     const raw = JSON.stringify({
-        "limit": 10,
-        "offset": 0
+        "limit": limit,
+        "offset": offset
     });
 
     const requestOptions = {
@@ -16,8 +16,7 @@ export const GetJObsDetails = async () => {
     };
 
     try {
-        let response = await axios.post(fetchURL, requestOptions, raw);
-        console.log(response);
+        return await axios.post(fetchURL, requestOptions, raw);
     } catch (err) {
         console.log(err);
     }

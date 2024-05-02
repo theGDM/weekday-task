@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 /* Common Styles */
 * {
@@ -8,17 +8,19 @@
   text-decoration: none;
   outline: none;
   list-style-type: none;
-  font-family: "Lexend", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
   font-optical-sizing: auto;
 }
 
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Lexend Deca", sans-serif;
 }
