@@ -107,7 +107,7 @@ const JobCard = ({ jobsDetails }) => {
                 height='25rem'
                 maxWidth='100%'
                 sx={{
-                    backgroundImage: 'linear-gradient(to bottom, transparent 0%, transparent 60%,  #F6F6F6 100%);',
+                    backgroundImage: 'linear-gradient(to bottom, rgb(77, 89, 106) 0%, rgb(77, 89, 106) 60%,  transparent 100%);',
                     backgroundClip: 'text'
                 }}
             >
@@ -135,7 +135,7 @@ const JobCard = ({ jobsDetails }) => {
                 </Typography>
                 <Typography
                     fontSize='1.4rem'
-                    color='rgb(77, 89, 106)'
+                    color='transparent'
                     fontWeight='300'
                     style={{
                         overflow: 'hidden',

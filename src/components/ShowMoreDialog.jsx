@@ -12,7 +12,7 @@ const ShowMoreDialog = ({ isOpen, onClose, jobDetails }) => {
             height: '80%',
             backgroundColor: '#fff',
             borderRadius: '1rem',
-            boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.8)',
+            boxShadow: '0px 0px 1rem 0px rgba(0, 0, 0, 0.8)',
             overflow: 'auto',
             padding: '1rem'
         },

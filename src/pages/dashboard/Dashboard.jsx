@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import JobCard from '../../components/JobCard'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobsData } from '../../actions/JobsDataAction';
+import Filterbar from '../../components/Filterbar';
 
 const Dashboard = () => {
     let dispatch = useDispatch();
@@ -14,6 +15,7 @@ const Dashboard = () => {
 
     return (
         <Box display='flex' flexDirection='column' p='2rem'>
+            <Filterbar />
             <Box
                 display='flex'
                 flexDirection='row'
