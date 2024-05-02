@@ -3,7 +3,7 @@ import React from 'react'
 
 const Filterbar = () => {
     return (
-        <Box display='flex' flexDirection='row' alignItems='center'>
+        <Box display='flex' flexDirection='row' alignItems='center' flexWrap='wrap'>
 
         </Box>
     )
