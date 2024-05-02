@@ -1,7 +1,7 @@
 ## **Tools Used :**
-**`FrontEnd:`** To make the UI of the web application, I have used the **React.js** and **Material UI** library.
+**FrontEnd:** `ReactJs` `Redux` `Material UI`
 
-**`Deployment:`** Currently the web application is hosted on **AWS Amplify** and **Github**.
+**Deployment:** `AWS Amplify` `Github`
 
 ## **Steps to Run the Application (Locally):**
 1. Firstly fork the given repo.
