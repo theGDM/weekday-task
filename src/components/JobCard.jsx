@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Avatar, Box, Button, Typography } from '@mui/material'
 import React from 'react'
 
 const JobCard = () => {
@@ -10,7 +10,7 @@ const JobCard = () => {
             justifyContent='space-between'
             maxWidth='36rem'
             alignItems='start'
-            p='0.5rem'
+            p='0.8rem'
             boxShadow='rgba(0, 0, 0, 0.25) 0px 1px 4px 0px !important'
             borderRadius='2rem'
         >
@@ -83,7 +83,6 @@ const JobCard = () => {
                 <Typography
                     fontSize='1.4rem'
                     fontWeight='400'
-                    m='0.8rem 0'
                     color='rgb(77, 89, 106)'
                 >
                     Estimated Salary: &#8377;20 - 30 LPA ⚠️
@@ -156,17 +155,146 @@ const JobCard = () => {
                 flexDirection='column'
                 justifyContent='start'
                 p='0.5rem 1rem'
+                mt='1rem'
             >
                 <Typography
-                    fontSize='1.4rem'
-                    color='#4943da'
+                    fontSize='1.3rem'
+                    fontWeight='600'
+                    color='#8b8b8b'
+                    mb='0.3rem'
+                    letterSpacing='0.1rem'
                 >
                     Skills
                 </Typography>
                 <Box display='flex' flexDirection='row' alignItems='center'>
-
+                    <Box
+                        fontSize='0.9rem'
+                        fontWeight='500'
+                        color='#4943da'
+                        padding='0.2rem 0.7rem'
+                        borderRadius='5rem'
+                        bgcolor='#d9fed3'
+                        mr='0.4rem'
+                    >
+                        NodeJS
+                    </Box>
+                    <Box
+                        fontSize='0.9rem'
+                        fontWeight='500'
+                        color='#4943da'
+                        padding='0.2rem 0.7rem'
+                        borderRadius='5rem'
+                        bgcolor='#d9fed3'
+                        mr='0.4rem'
+                    >
+                        NodeJS
+                    </Box>
+                    <Box
+                        fontSize='0.9rem'
+                        fontWeight='500'
+                        color='#4943da'
+                        padding='0.2rem 0.7rem'
+                        borderRadius='5rem'
+                        bgcolor='#d9fed3'
+                        mr='0.4rem'
+                    >
+                        NodeJS
+                    </Box>
                 </Box>
             </Box>
+            <Box
+                width='100%'
+                display='flex'
+                flexDirection='column'
+                justifyContent='start'
+                p='0.5rem 1rem'
+                mt='1rem'
+            >
+                <Typography
+                    fontSize='1.3rem'
+                    fontWeight='600'
+                    color='#8b8b8b'
+                    mb='0.3rem'
+                    letterSpacing='0.1rem'
+                >
+                    Minimum Experience
+                </Typography>
+                <Typography
+                    fontSize='1.3rem'
+                    fontWeight='500'
+                    letterSpacing='0.1rem'
+                >
+                    1 years
+                </Typography>
+            </Box>
+            <Box
+                width='100%'
+                display='flex'
+                flexDirection='column'
+                justifyContent='start'
+                p='0 1rem'
+                mt='1rem'
+            >
+                <Button
+                    sx={{
+                        backgroundColor: 'rgb(85, 239, 196)',
+                        color: '#000',
+                        p: '0.8rem 1.8rem',
+                        borderRadius: '0.8rem',
+                        fontWeight: '500',
+                        fontSize: '1.5rem',
+                        textTransform: 'none'
+                    }}
+                >
+                    ⚡ Easy Apply
+                </Button>
+            </Box>
+            <Box
+                width='100%'
+                display='flex'
+                flexDirection='column'
+                justifyContent='start'
+                p='0 1rem 0.5rem 1rem'
+                mt='1rem'
+            >
+                <Button
+                    sx={{
+                        backgroundColor: 'rgb(73, 67, 218)',
+                        color: '#000',
+                        p: '0.8rem 1.8rem',
+                        borderRadius: '0.8rem',
+                        fontWeight: '500',
+                        fontSize: '1.5rem'
+                    }}
+                    style={{
+                        '&:hover': {
+                            backgroundColor: 'rgb(73, 67, 218)',
+                            boxShadow: 'none',
+                        },
+                    }}
+                >
+                    <Box
+                        display='flex'
+                        flexDirection='row'
+                        alignItems='center'
+                    >
+
+                    </Box>
+                    <Avatar alt="Remy Sharp" src="https://weekday-logos-and-images.s3.eu-north-1.amazonaws.com/Mask+Group.png" sx={{ width: ' 2.5rem', height: '2.5rem', objectFit: 'cover', color: 'transparent' }} />
+                    <Avatar alt="Remy Sharp" src="https://weekday-logos-and-images.s3.eu-north-1.amazonaws.com/Mask+Group(1).png" sx={{ width: ' 2.5rem', height: '2.5rem', objectFit: 'cover', color: 'transparent' }} />
+                    <Typography
+                        fontWeight='400'
+                        lineHeight='1.5'
+                        color='rgb(255, 255, 255)'
+                        fontSize='1.4rem'
+                        textTransform='none'
+                        ml='0.5rem'
+                    >
+                        Unlock referral asks
+                    </Typography>
+                </Button>
+            </Box>
+
         </Box >
     )
 }
