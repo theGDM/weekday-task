@@ -10,47 +10,75 @@ const Dashboard = () => {
     let jobData = useSelector((state) => state.jobs);
     let filterData = useSelector((state) => state.filters);
     let [originalJobsData, setOriginalJobsData] = useState(jobData);
-    let [filteredJobsData, setFilteredJobsData] = useState(jobData);
+    let [filteredJobsData, setFilteredJobsData] = useState([]);
 
     useEffect(() => {
-        dispatch(fetchJobsData(10, 10));
+        dispatch(fetchJobsData(10, 0));
     }, []);
 
+    useEffect(() => {
+        setOriginalJobsData(jobData);
+    }, [jobData.jobs]);
+
 
     useEffect(() => {
-        console.log(filterData.experience);
-        console.log(filterData.location);
-        console.log(filterData.min_base_pay);
-        console.log(filterData.work_place);
-        console.log(filterData.tech_stack);
-        console.log(filterData.role);
-        let tempData = originalJobsData;
-        console.log(tempData);
+        let tempData = originalJobsData.jobs;
+
+        //when filter is based on experience
         if (filterData.experience != '') {
-
+            let selectedYear = parseInt(filterData.experience);
+            tempData = tempData.filter(job => {
+                let minYear = job.minExp == null ? 0 : job.minExp;
+                let maxYear = job.maxExp == null ? minYear : job.maxExp;
+                return selectedYear >= minYear && selectedYear <= maxYear;
+            });
         }
 
+        //when filter is based on location
         if (filterData.location != '') {
-
+            let selectedLocation = filterData.location;
+            tempData = tempData.filter(job => job.location.toLowerCase() == selectedLocation.toLowerCase());
         }
 
+        //when filter is based on base pay
         if (filterData.min_base_pay != '') {
-
+            let selectedBasePay = parseInt(filterData.min_base_pay.split('USD')[0]);
+            tempData = tempData.filter(job => {
+                let maxPay = job.maxJdSalary == null ? 120 : job.maxJdSalary;
+                let minPay = job.minJdSalary == null ? maxPay - 10 : job.minJdSalary;
+                return selectedBasePay <= minPay;
+            });
         }
 
-        if (filterData.work_place != '') {
-
-        }
-
-        if (filterData.tech_stack != '') {
-
-        }
-
+        //when filter is based on role
         if (filterData.role != '') {
-
+            let selectedRole = filterData.role;
+            tempData = tempData.filter(job => job.jobRole.toLowerCase() == selectedRole.toLowerCase());
         }
 
-    }, [filterData]);
+        //when filter is based on work place
+        if (filterData.work_place != '') {
+            //in the sample data actually this attribute is not provided, so can not filter out on based of it.
+        }
+
+        //when filter is based on tech stack
+        if (filterData.tech_stack != '') {
+            //in the sample data actually this attribute is not provided, so can not filter out on based of it.
+        }
+
+        //when user has searched for company name
+        if (filterData.company_name != '') {
+            console.log(filterData.company_name);
+            let searchedName = filterData.company_name;
+            tempData = tempData.filter(job =>
+                job.companyName.toLowerCase().startsWith(searchedName.toLowerCase())
+            );
+        }
+
+        //now finally setting up the filtered data, based on the apply filter
+        setFilteredJobsData(tempData);
+
+    }, [filterData, originalJobsData]);
 
     return (
         <Box display='flex' flexDirection='column' p='2rem'>
@@ -63,7 +91,7 @@ const Dashboard = () => {
                 mt='2rem'
             >
                 {
-                    jobData.jobs.length != 0 ? jobData.jobs.map((job, index) => {
+                    filteredJobsData.length != 0 ? filteredJobsData.map((job, index) => {
                         if (job == undefined) return <></>
                         return <JobCard key={index} jobsDetails={job} />
                     }) :

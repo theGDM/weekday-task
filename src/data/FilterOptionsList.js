@@ -51,16 +51,21 @@ export const ExperienceList = [
 ]
 
 export const BasePayList = [
-    '0L',
-    '10L',
-    '20L',
-    '30L',
-    '40L',
-    '50L',
-    '60L',
-    '70L',
-    '80L',
-    '90L'
+    '10USD',
+    '20USD',
+    '30USD',
+    '40USD',
+    '50USD',
+    '60USD',
+    '70USD',
+    '80USD',
+    '90USD',
+    '100USD',
+    '110USD',
+    '120USD',
+    '130USD',
+    '150USD',
+    '160USD'
 ]
 
 export const LocationList = [

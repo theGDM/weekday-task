@@ -8,7 +8,6 @@ const JobCard = ({ jobsDetails }) => {
     const openInfoModal = () => setOpenModal(true);
     const closeInfoModal = () => setOpenModal(false);
 
-    console.log('Hiii', jobsDetails);
     if (jobsDetails == undefined) return <></>;
     return (
         <Box
@@ -48,9 +47,9 @@ const JobCard = ({ jobsDetails }) => {
             >
                 <Box
                     component='img'
-                    alt='Workday-Logo'
+                    alt='Company-Logo'
                     height='4rem'
-                    src='https://cdn5.vectorstock.com/i/1000x1000/22/39/construction-company-logo-samples-vector-2222239.jpg'
+                    src={jobsDetails?.logoUrl}
                 />
                 <Box
                     display='flex'
@@ -65,14 +64,15 @@ const JobCard = ({ jobsDetails }) => {
                         letterSpacing='0.1rem'
                         marginBottom='0.3rem'
                     >
-                        Lorem Ipsum Inc.
+                        {jobsDetails?.companyName}
                     </Typography>
                     <Typography
                         fontSize='1.4rem'
                         lineHeight='1.5'
                         fontWeight='300'
+                        textTransform='capitalize'
                     >
-                        Lead Software Engineer
+                        {jobsDetails?.jobRole}
                     </Typography>
                     <Typography
                         fontSize='1.1rem'

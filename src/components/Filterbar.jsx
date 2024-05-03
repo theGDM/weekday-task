@@ -7,6 +7,7 @@ import BasePayFilter from './BasePayFilter';
 import LocationFilter from './LocationFilter';
 import WorkingModelFilter from './WorkingModeFilter';
 import TechStackFilter from './TechStackFilter';
+import CompanyNameFilter from './CompanyNameFilter';
 
 const Filterbar = () => {
     return (
@@ -17,6 +18,7 @@ const Filterbar = () => {
             <LocationFilter />
             <WorkingModelFilter />
             <TechStackFilter />
+            <CompanyNameFilter />
         </Box >
     )
 }

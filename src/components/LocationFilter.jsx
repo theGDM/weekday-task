@@ -51,10 +51,8 @@ const LocationFilter = () => {
     const BootstrapInput = styled(InputBase)(({ theme }) => ({
         'label + &': {
             marginTop: theme.spacing('1rem'),
-
         },
         '& .MuiInputBase-input': {
-            borderRadius: 4,
             position: 'relative',
             backgroundColor: '#fff',
             border: `0.15rem solid rgb(204, 204, 204)`,
