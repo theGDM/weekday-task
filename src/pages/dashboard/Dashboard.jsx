@@ -93,7 +93,7 @@ const Dashboard = () => {
     };
 
     // Add scroll event listener to window
-    window.addEventListener('scroll', handleScroll);
+    // window.addEventListener('scroll', handleScroll);
 
     return (
         <Box display='flex' flexDirection='column' p='2rem'>

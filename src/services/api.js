@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const fetchURL = 'https://api.weekday.technology/adhoc/getSampleJdJSON';
+const fetchURL = 'https://api.weekday.technology/adhoc/getSampleJdJSON'; //api endpoint
 
 export const GetJObsDetails = async (limit, offset) => {
     console.log(`limit: ${limit}, offset: ${offset}`);

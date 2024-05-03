@@ -12,6 +12,7 @@
   font-optical-sizing: auto;
 }
 
+/* setting font-size to 62.5% so that 1rem becomes equal to 10px */
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;

@@ -1,3 +1,4 @@
+//maintaing the initial states for jobData
 const initialState = {
     loading: false,
     jobs: [],
