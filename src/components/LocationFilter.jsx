@@ -2,8 +2,8 @@ import { Box, Chip, FormControl, InputBase, MenuItem, Select, Typography } from 
 import React, { useState } from 'react'
 import { createStyles, makeStyles, styled } from '@mui/styles';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
-import { useDispatch, useSelector } from "react-redux";
-import { SetLocation, SetMinBasePay } from '../actions/FilterAction';
+import { useDispatch } from "react-redux";
+import { SetLocation } from '../actions/FilterAction';
 import { LocationList } from '../data/FilterOptionsList';
 
 const useStyles = makeStyles((theme) =>

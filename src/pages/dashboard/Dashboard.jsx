@@ -10,10 +10,11 @@ const Dashboard = () => {
     let jobData = useSelector((state) => state.jobs);
     let filterData = useSelector((state) => state.filters);
     let [originalJobsData, setOriginalJobsData] = useState(jobData);
+    let [offset, setOffset] = useState(0);
     let [filteredJobsData, setFilteredJobsData] = useState([]);
 
     useEffect(() => {
-        dispatch(fetchJobsData(10, 0));
+        dispatch(fetchJobsData(10, offset));
     }, []);
 
     useEffect(() => {
@@ -79,6 +80,20 @@ const Dashboard = () => {
         setFilteredJobsData(tempData);
 
     }, [filterData, originalJobsData]);
+
+    // Function to check if user has scrolled to the bottom of the page
+    const handleScroll = () => {
+        const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 5) {
+            // Call fetchData function when user reaches near the bottom of the page
+            let newOffset = offset += 10;
+            dispatch(fetchJobsData(10, offset += 10));
+            setOffset(newOffset);
+        }
+    };
+
+    // Add scroll event listener to window
+    window.addEventListener('scroll', handleScroll);
 
     return (
         <Box display='flex' flexDirection='column' p='2rem'>
