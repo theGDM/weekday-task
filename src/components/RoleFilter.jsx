@@ -48,10 +48,6 @@ export const RoleFilter = () => {
     };
 
     const BootstrapInput = styled(InputBase)(({ theme }) => ({
-        'label + &': {
-            marginTop: theme.spacing('1rem'),
-
-        },
         '& .MuiInputBase-input': {
             borderRadius: 4,
             position: 'relative',
@@ -59,7 +55,7 @@ export const RoleFilter = () => {
             border: `0.15rem solid rgb(204, 204, 204)`,
             borderRadius: '0.4rem',
             fontSize: '13px',
-            padding: '0.8rem 0.8rem 0.8px 0.8rem',
+            padding: '0.9rem 0.8rem 0.25rem 0.8rem',
             "&:hover": {
                 borderRadius: '0.4rem',
                 borderColor: 'rgb(180, 180, 180)',
@@ -95,7 +91,6 @@ export const RoleFilter = () => {
                 <Box
                     sx={{ height: '1.6rem' }}
                 >
-
                 </Box>}
             <Select
                 labelId="select-role"
@@ -139,15 +134,6 @@ export const RoleFilter = () => {
                 }}
                 MenuProps={MenuProps}
             >
-                <MenuItem
-                    sx={{
-                        fontSize: '1.4rem', fontWeight: '400', backgroundColor: '#fff'
-                    }}
-                    disabled
-                    value=""
-                >
-                    Roles
-                </MenuItem>
                 <MenuItem
                     sx={{
                         fontSize: '1.4rem', fontWeight: '400', backgroundColor: '#fff'

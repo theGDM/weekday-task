@@ -60,7 +60,7 @@ const TechStackFilter = () => {
             border: `0.15rem solid rgb(204, 204, 204)`,
             borderRadius: '0.4rem',
             fontSize: '13px',
-            padding: '0.8rem 0.8rem 0.8px 0.8rem',
+            padding: '0.8rem 0.8rem 0.2rem 0.8rem',
             "&:hover": {
                 borderRadius: '0.4rem',
                 borderColor: 'rgb(180, 180, 180)',
