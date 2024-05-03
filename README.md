@@ -12,9 +12,16 @@
 ## **Tech Used :**
 **FrontEnd:** `ReactJs` `CSS` `Redux` `Material UI`
 
-**Deployment:** `AWS Amplify` `Github`
+**Hosted Platforms:** `AWS Amplify` `Github`
 
 **IDE:** `Visual Studio Code`
+
+## **Task Requirements :**
+- Each job listing should be displayed as a card containing the following information (Job title, Company name, Location, Job description (limited to a certain number of characters with an option to expand), Experience required, Apply button/link).
+✅
+- Filters based on Min experience, Company name, Location, Remote on-site, Tech stack, Role, Min base pay. ✅
+- Implement infinite scroll to load additional job listings as the user scrolls down the page. ✅
+-  Website is responsive and works well on different screen sizes, including mobile devices. ✅
 
 ## **Steps to Run the Application (Locally):**
 1. Firstly fork the given repo.

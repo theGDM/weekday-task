@@ -18,7 +18,7 @@ const JobDataReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                jobs: [...state.jobs, ...action.payload.jobs],
+                jobs: action.payload.jobs,
                 job_counts: action.payload.counts
             };
 
