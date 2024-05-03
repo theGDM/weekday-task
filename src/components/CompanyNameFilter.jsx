@@ -34,7 +34,7 @@ const CompanyNameFilter = () => {
                     '&::placeholder': { // Change placeholder color
                         color: '#999',
                     },
-                    "&:hover": {
+                    "&:active": {
                         borderRadius: '0.4rem',
                         borderColor: 'rgb(180, 180, 180)',
                     },

@@ -82,6 +82,25 @@ const Dashboard = () => {
 
     return (
         <Box display='flex' flexDirection='column' p='2rem'>
+            <Box display='flex'
+                flexDirection='row'
+                alignItems='center'
+                justifyContent='center'
+            >
+                <Box
+                    borderBottom='1px solid blue'
+                    width='13rem'
+                >
+                    <Typography
+                        fontSize='1.8rem'
+                        fontWeight='300'
+                        textAlign='center'
+                    >
+                        Search Jobs
+                    </Typography>
+                </Box>
+
+            </Box>
             <Filterbar />
             <Box
                 display='flex'

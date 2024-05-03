@@ -100,8 +100,16 @@ const LocationFilter = () => {
                 value={location}
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => (
-                    <Chip
+                displayEmpty
+                renderValue={(selected) => {
+                    if (!selected) {
+                        return (
+                            <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>
+                                Location
+                            </span>
+                        );
+                    }
+                    return <Chip
                         sx={{
                             borderRadius: '0.3rem',
                             padding: '0',
@@ -124,7 +132,7 @@ const LocationFilter = () => {
                         key={location}
                         label={location}
                     />
-                )}
+                }}
                 MenuProps={MenuProps}
             >
                 <MenuItem

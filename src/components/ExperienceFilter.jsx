@@ -102,8 +102,16 @@ const ExperienceFilter = () => {
                 value={experience}
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => (
-                    <Chip
+                displayEmpty
+                renderValue={(selected) => {
+                    if (!selected) {
+                        return (
+                            <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>
+                                Experience
+                            </span>
+                        );
+                    }
+                    return <Chip
                         sx={{
                             borderRadius: '0.3rem',
                             padding: '0',
@@ -126,7 +134,7 @@ const ExperienceFilter = () => {
                         key={experience}
                         label={experience}
                     />
-                )}
+                }}
                 MenuProps={MenuProps}
             >
                 <MenuItem

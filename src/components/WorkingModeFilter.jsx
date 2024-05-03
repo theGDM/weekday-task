@@ -84,7 +84,7 @@ const WorkingModelFilter = () => {
     }
 
     return (
-        <FormControl sx={{ width: 'auto', minWidth: '15rem' }} size='medium'>
+        <FormControl sx={{ width: 'auto', minWidth: '15rem' }}>
             {workModel != '' ? <Typography
                 sx={{ fontSize: '1.3rem' }}
             >
@@ -100,10 +100,18 @@ const WorkingModelFilter = () => {
                 id="single-select-role"
                 select
                 value={workModel}
+                displayEmpty
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => (
-                    <Chip
+                renderValue={(selected) => {
+                    if (!selected) {
+                        return (
+                            <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>
+                                Remote
+                            </span>
+                        );
+                    }
+                    return <Chip
                         sx={{
                             borderRadius: '0.3rem',
                             padding: '0',
@@ -126,7 +134,7 @@ const WorkingModelFilter = () => {
                         key={workModel}
                         label={workModel}
                     />
-                )}
+                }}
                 MenuProps={MenuProps}
             >
                 <MenuItem

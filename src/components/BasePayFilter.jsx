@@ -100,10 +100,18 @@ const BasePayFilter = () => {
                 id="single-select-role"
                 select
                 value={basePay}
+                displayEmpty
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => (
-                    <Chip
+                renderValue={(selected) => {
+                    if (!selected) {
+                        return (
+                            <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>
+                                Minimum Base Pay
+                            </span>
+                        );
+                    }
+                    return <Chip
                         sx={{
                             borderRadius: '0.3rem',
                             padding: '0',
@@ -126,7 +134,7 @@ const BasePayFilter = () => {
                         key={basePay}
                         label={basePay}
                     />
-                )}
+                }}
                 MenuProps={MenuProps}
             >
                 <MenuItem

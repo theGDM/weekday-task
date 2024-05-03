@@ -2,7 +2,7 @@ import { Box, Chip, FormControl, InputBase, InputLabel, MenuItem, OutlinedInput,
 import React, { useState } from 'react'
 import { createStyles, makeStyles, styled, useTheme } from '@mui/styles';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { SetRole } from '../actions/FilterAction';
 import { DesignRoles, EngineeringRoles, ProductRoles } from '../data/FilterOptionsList';
 
@@ -102,11 +102,18 @@ export const RoleFilter = () => {
                 id="single-select-role"
                 select
                 value={role}
-                // displayEmpty
+                displayEmpty
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => (
-                    <Chip
+                renderValue={(selected) => {
+                    if (!selected) {
+                        return (
+                            <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>
+                                Role
+                            </span>
+                        );
+                    }
+                    return <Chip
                         sx={{
                             borderRadius: '0.3rem',
                             padding: '0',
@@ -129,9 +136,18 @@ export const RoleFilter = () => {
                         key={role}
                         label={role}
                     />
-                )}
+                }}
                 MenuProps={MenuProps}
             >
+                <MenuItem
+                    sx={{
+                        fontSize: '1.4rem', fontWeight: '400', backgroundColor: '#fff'
+                    }}
+                    disabled
+                    value=""
+                >
+                    Roles
+                </MenuItem>
                 <MenuItem
                     sx={{
                         fontSize: '1.4rem', fontWeight: '400', backgroundColor: '#fff'
@@ -187,6 +203,6 @@ export const RoleFilter = () => {
                     </MenuItem>
                 ))}
             </Select>
-        </FormControl>
+        </FormControl >
     )
 }
