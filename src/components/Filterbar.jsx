@@ -6,15 +6,17 @@ import ExperienceFilter from './ExperienceFilter';
 import BasePayFilter from './BasePayFilter';
 import LocationFilter from './LocationFilter';
 import WorkingModelFilter from './WorkingModeFilter';
+import TechStackFilter from './TechStackFilter';
 
 const Filterbar = () => {
     return (
-        <Box display='flex' flexDirection='row' alignItems='center' flexWrap='wrap' gap={2} m='0.5rem'>
+        <Box display='flex' flexDirection='row' alignItems='center' flexWrap='wrap' gap={2} m='0.7rem'>
             <RoleFilter />
             <ExperienceFilter />
             <BasePayFilter />
             <LocationFilter />
             <WorkingModelFilter />
+            <TechStackFilter />
         </Box >
     )
 }

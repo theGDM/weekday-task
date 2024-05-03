@@ -60,12 +60,12 @@ const JobCard = ({ jobsDetails }) => {
                 >
                     <Typography
                         color='#8b8b8b'
-                        fontSize='1.3rem'
+                        fontSize='1.35rem'
                         fontWeight='600'
                         letterSpacing='0.1rem'
                         marginBottom='0.3rem'
                     >
-                        Futuristic Labs
+                        Lorem Ipsum Inc.
                     </Typography>
                     <Typography
                         fontSize='1.4rem'
@@ -123,7 +123,7 @@ const JobCard = ({ jobsDetails }) => {
                     color='rgb(77, 89, 106)'
                     fontWeight='300'
                 >
-                    Futuristic Labs is an Innovation Studio that is focused on enriching the quality of life by harnessing the power of technology to create products that transform mundane activities into delightful experiences.
+                    Lorem Ipsum Inc. is a leading provider of innovative solutions in the technology industry. Established in 2005, Lorem Ipsum Inc. has been dedicated to revolutionizing the way businesses operate by delivering cutting-edge software and services.
                 </Typography>
                 <Typography
                     fontWeight='400'

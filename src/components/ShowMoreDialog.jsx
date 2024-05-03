@@ -66,7 +66,7 @@ const ShowMoreDialog = ({ isOpen, onClose, jobDetails }) => {
                     fontWeight='300'
                     fontSize='1.4rem'
                 >
-                    Futuristic Labs is an Innovation Studio that is focused on enriching the quality of life by harnessing the power of technology to create products that transform mundane activities into delightful experiences.
+                    Lorem Ipsum Inc. is a leading provider of innovative solutions in the technology industry. Established in 2005, Lorem Ipsum Inc. has been dedicated to revolutionizing the way businesses operate by delivering cutting-edge software and services.
                 </Typography>
                 <Typography
                     fontWeight='400'

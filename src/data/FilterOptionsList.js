@@ -82,3 +82,29 @@ export const WorkModelList = [
     'Hybrid',
     'In-Office'
 ]
+
+export const TechStackList = [
+    'ReactJs',
+    'Redux',
+    'NodeJs',
+    'C++',
+    'Javascript',
+    'MongoDB',
+    'SQL',
+    'MySQL',
+    'Dart',
+    'Flutter',
+    'React Native',
+    'AWS',
+    'GCP',
+    'Java',
+    'Kotlin',
+    'OS',
+    'OOPs',
+    'Data Structures',
+    'Algorithms',
+    'Cloud Computing',
+    'VueJs',
+    'NextJs',
+    'NuxtJs'
+]
