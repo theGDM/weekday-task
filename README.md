@@ -1,10 +1,3 @@
-## **Tech Used :**
-**FrontEnd:** `ReactJs` `CSS` `Redux` `Material UI`
-
-**Deployment:** `AWS Amplify` `Github`
-
-**IDE:** `Visual Studio Code`
-
 ## **Website View :**
 ![Screenshot 2024-05-03 185659](https://github.com/theGDM/weekday-task/assets/89511377/92b42cc3-fa21-4c9d-b9ee-72d691426b2b)
 ![Screenshot 2024-05-03 185802](https://github.com/theGDM/weekday-task/assets/89511377/a434d244-6c6f-4090-bb86-5dde1bb0e9d4)
@@ -15,6 +8,13 @@
   <img src="https://github.com/theGDM/weekday-task/assets/89511377/c0144f75-cfc1-439b-803c-6ec0f2e01f9c" width="320" /> 
   <img src="https://github.com/theGDM/weekday-task/assets/89511377/f999f79d-f9ce-4cd2-b0db-44dd18448eaa" width="320" /> 
 </p>
+
+## **Tech Used :**
+**FrontEnd:** `ReactJs` `CSS` `Redux` `Material UI`
+
+**Deployment:** `AWS Amplify` `Github`
+
+**IDE:** `Visual Studio Code`
 
 ## **Steps to Run the Application (Locally):**
 1. Firstly fork the given repo.
