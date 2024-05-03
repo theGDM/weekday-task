@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import JobDataReducer from '../reducers/JobsDataReducer';
 import FilterReducer from '../reducers/FilterReducer';
 
-//creating rootReducer by combining all thr created reducers
+//creating rootReducer by combining all the created reducers
 const rootReducer = combineReducers({
     jobs: JobDataReducer,
     filters: FilterReducer

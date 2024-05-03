@@ -1,3 +1,4 @@
+//creating list for options in various select filters
 export const EngineeringRoles = [
     'Backend',
     'Frontend',

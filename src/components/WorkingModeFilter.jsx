@@ -38,6 +38,7 @@ const WorkingModelFilter = () => {
     const classes = useStyles();
     let dispatch = useDispatch();
     const [workModel, setWorkModel] = useState([]);
+    let [selected, setSelected] = useState(false);
 
     const MenuProps = {
         PaperProps: {
@@ -71,11 +72,13 @@ const WorkingModelFilter = () => {
 
     const handleChange = (e) => {
         setWorkModel(e.target.value);
+        setSelected(true);
         dispatch(SetWorkPlace(e.target.value));
     };
 
     const handleDelete = () => {
         setWorkModel('');
+        setSelected(false);
         dispatch(SetWorkPlace(''));
     }
 
@@ -99,7 +102,7 @@ const WorkingModelFilter = () => {
                 displayEmpty
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => {
+                renderValue={() => {
                     if (!selected) {
                         return (
                             <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>

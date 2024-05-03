@@ -3,6 +3,7 @@ import Topbar from './components/Topbar';
 import Dashboard from './pages/dashboard/Dashboard';
 import { Route, Routes } from 'react-router-dom';
 
+//setting up the routes, global topbar
 function App() {
   return (
     <Box>

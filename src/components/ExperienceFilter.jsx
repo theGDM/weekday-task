@@ -38,6 +38,7 @@ const ExperienceFilter = () => {
     const classes = useStyles();
     let dispatch = useDispatch();
     const [experience, setExperience] = useState([]);
+    let [selected, setSelected] = useState(false);
 
     const MenuProps = {
         PaperProps: {
@@ -71,11 +72,13 @@ const ExperienceFilter = () => {
 
     const handleChange = (e) => {
         setExperience(e.target.value);
+        setSelected(true);
         dispatch(SetExperience(e.target.value));
     };
 
     const handleDelete = () => {
         setExperience('');
+        setSelected(false);
         dispatch(SetExperience(''));
     }
 
@@ -99,7 +102,7 @@ const ExperienceFilter = () => {
                 onChange={handleChange}
                 input={< BootstrapInput />}
                 displayEmpty
-                renderValue={(selected) => {
+                renderValue={() => {
                     if (!selected) {
                         return (
                             <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>

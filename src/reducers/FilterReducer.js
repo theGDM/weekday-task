@@ -1,3 +1,4 @@
+//maintaining the initial state for filters data
 const initialState = {
     experience: '',
     location: '',

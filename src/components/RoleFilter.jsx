@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) =>
 export const RoleFilter = () => {
     const classes = useStyles();
     let dispatch = useDispatch();
+    let [selected, setSelected] = useState(false);
 
     const MenuProps = {
         PaperProps: {
@@ -73,11 +74,13 @@ export const RoleFilter = () => {
 
     const handleChange = (e) => {
         setRole(e.target.value);
+        setSelected(true);
         dispatch(SetRole(e.target.value));
     };
 
     const handleDelete = () => {
         setRole('');
+        setSelected(false);
         dispatch(SetRole(''));
     }
 
@@ -100,7 +103,7 @@ export const RoleFilter = () => {
                 displayEmpty
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => {
+                renderValue={() => {
                     if (!selected) {
                         return (
                             <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>

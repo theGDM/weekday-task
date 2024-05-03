@@ -2,7 +2,7 @@ import { Box, Chip, FormControl, InputBase, MenuItem, Select, Typography } from 
 import React, { useState } from 'react'
 import { createStyles, makeStyles, styled } from '@mui/styles';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { SetMinBasePay } from '../actions/FilterAction';
 import { BasePayList } from '../data/FilterOptionsList';
 
@@ -38,6 +38,7 @@ const BasePayFilter = () => {
     const classes = useStyles();
     let dispatch = useDispatch();
     const [basePay, setBasePay] = useState([]);
+    let [selected, setSelected] = useState(false);
 
     const MenuProps = {
         PaperProps: {
@@ -71,11 +72,13 @@ const BasePayFilter = () => {
 
     const handleChange = (e) => {
         setBasePay(e.target.value);
+        setSelected(true);
         dispatch(SetMinBasePay(e.target.value));
     };
 
     const handleDelete = () => {
         setBasePay('');
+        setSelected(false);
         dispatch(SetMinBasePay(''));
     }
 
@@ -99,7 +102,7 @@ const BasePayFilter = () => {
                 displayEmpty
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => {
+                renderValue={() => {
                     if (!selected) {
                         return (
                             <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>

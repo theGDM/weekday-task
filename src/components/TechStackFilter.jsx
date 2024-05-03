@@ -38,6 +38,7 @@ const TechStackFilter = () => {
     const classes = useStyles();
     let dispatch = useDispatch();
     const [tech, setTech] = useState([]);
+    let [selected, setSelected] = useState(false);
 
     const MenuProps = {
         PaperProps: {
@@ -49,10 +50,6 @@ const TechStackFilter = () => {
     };
 
     const BootstrapInput = styled(InputBase)(({ theme }) => ({
-        'label + &': {
-            marginTop: theme.spacing('1rem'),
-
-        },
         '& .MuiInputBase-input': {
             borderRadius: 4,
             position: 'relative',
@@ -75,11 +72,13 @@ const TechStackFilter = () => {
 
     const handleChange = (e) => {
         setTech(e.target.value);
+        setSelected(true);
         dispatch(SetTechStack(e.target.value));
     };
 
     const handleDelete = () => {
         setTech('');
+        setSelected(false);
         dispatch(SetTechStack(''));
     }
 
@@ -103,7 +102,7 @@ const TechStackFilter = () => {
                 displayEmpty
                 onChange={handleChange}
                 input={< BootstrapInput />}
-                renderValue={(selected) => {
+                renderValue={() => {
                     if (!selected) {
                         return (
                             <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>

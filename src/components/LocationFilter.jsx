@@ -38,6 +38,7 @@ const LocationFilter = () => {
     const classes = useStyles();
     let dispatch = useDispatch();
     const [location, setLocation] = useState([]);
+    let [selected, setSelected] = useState(false);
 
     const MenuProps = {
         PaperProps: {
@@ -70,11 +71,13 @@ const LocationFilter = () => {
 
     const handleChange = (e) => {
         setLocation(e.target.value);
+        setSelected(true);
         dispatch(SetLocation(e.target.value));
     };
 
     const handleDelete = () => {
         setLocation('');
+        setSelected(false);
         dispatch(SetLocation(''));
     }
 
@@ -98,7 +101,7 @@ const LocationFilter = () => {
                 onChange={handleChange}
                 input={< BootstrapInput />}
                 displayEmpty
-                renderValue={(selected) => {
+                renderValue={() => {
                     if (!selected) {
                         return (
                             <span style={{ fontSize: '1.4rem', color: '#999', fontWeight: '300' }}>
