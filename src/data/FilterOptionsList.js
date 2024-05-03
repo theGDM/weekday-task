@@ -34,3 +34,51 @@ export const OperationRoles = [
     'Operation Manager',
     'Founder\'s office / Chief of Staff'
 ]
+
+export const ExperienceList = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12'
+]
+
+export const BasePayList = [
+    '0L',
+    '10L',
+    '20L',
+    '30L',
+    '40L',
+    '50L',
+    '60L',
+    '70L',
+    '80L',
+    '90L'
+]
+
+export const LocationList = [
+    'Noida',
+    'Gurgaon',
+    'Delhi Ncr',
+    'Bangalore',
+    'Hyderabad',
+    'Pune',
+    'Ahmedabad',
+    'Kolkata',
+    'Jaipur',
+    'Chennai',
+    'Coimabatore'
+]
+
+export const WorkModelList = [
+    'Remote',
+    'Hybrid',
+    'In-Office'
+]

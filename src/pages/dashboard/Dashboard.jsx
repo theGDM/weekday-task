@@ -10,7 +10,7 @@ const Dashboard = () => {
     let jobData = useSelector((state) => state.jobs);
 
     useEffect(() => {
-        // dispatch(fetchJobsData(30, 0));
+        dispatch(fetchJobsData(30, 0));
     }, []);
 
     return (
