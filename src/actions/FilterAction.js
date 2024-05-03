@@ -27,3 +27,9 @@ export const SetRole = (data) => ({
     type: 'SET_ROLE',
     payload: data,
 });
+
+
+export const SetTechStack = (data) => ({
+    type: 'SET_TECH_STACK',
+    payload: data,
+});

@@ -1,9 +1,10 @@
 const initialState = {
     experience: '',
     location: '',
-    min_base_pay: 0,
+    min_base_pay: '',
     company_name: '',
     work_place: '',
+    tech_stack: '',
     role: '',
 }
 
@@ -43,6 +44,12 @@ const FilterReducer = (state = initialState, action) => {
             return {
                 ...state,
                 role: action.payload
+            };
+
+        case 'SET_TECH_STACK':
+            return {
+                ...state,
+                tech_stack: action.payload
             };
 
         default:

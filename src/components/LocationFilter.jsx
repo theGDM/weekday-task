@@ -79,7 +79,7 @@ const LocationFilter = () => {
     };
 
     const handleDelete = () => {
-        ('');
+        setLocation('');
         dispatch(SetLocation(''));
     }
 
